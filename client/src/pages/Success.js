@@ -21,7 +21,7 @@ function Success() {
                 idbPromise('cart', 'delete', item);
                 });
             }
-            setTimeout(function(){ window.location.assign(path.join(__dirname, '../')) });
+            setTimeout(function(){ window.location.assign(path.join(__dirname, '../')) }, 3000);
         }
 
         saveOrder();
