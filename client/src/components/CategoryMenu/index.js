@@ -4,10 +4,11 @@ import { useStoreContext } from "../../utils/GlobalState";
 import React, { useEffect } from 'react';
 import { UPDATE_CATEGORIES, UPDATE_CURRENT_CATEGORY } from '../../utils/actions';
 import { idbPromise } from '../../utils/helpers';
+import { useDispatch, useSelector } from 'react-redux';
 
 function CategoryMenu({ setCategory }) {
-  const [state, dispatch] = useStoreContext();
-
+  const dispatch = useDispatch();
+  const state = useSelector(state => state);
   const { categories } = state;
 
   const { loading, data: categoryData } = useQuery(QUERY_CATEGORIES);

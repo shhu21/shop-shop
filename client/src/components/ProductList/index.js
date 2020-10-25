@@ -7,9 +7,11 @@ import React, { useEffect } from 'react';
 import { useStoreContext } from '../../utils/GlobalState';
 import { UPDATE_PRODUCTS } from '../../utils/actions';
 import { idbPromise } from "../../utils/helpers";
+import { useDispatch, useSelector } from 'react-redux';
 
 function ProductList() {
-  const [state, dispatch] = useStoreContext();
+  const dispatch = useDispatch();
+  const state = useSelector(state => state);
 
   const { currentCategory } = state;
 
